@@ -1,0 +1,49 @@
+.vert-align-center {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container .title {
+  font-size: 2rem;
+  margin-bottom: 0;
+  margin-top: 15px;
+}
+
+.container .menu {
+  height: auto;
+  width: 100%;
+}
+
+.container .button1 {
+  font-size: 0.8rem;
+  height: 60px;
+  width: 70px;
+  background-color: white;
+  color: black;
+  border: 1px solid #747373;
+  /* 
+      Green */
+  border-radius: 2px;
+  -webkit-transition-duration: 0.4s;
+  /* Safari */
+  transition-duration: 0.4s;
+}
+
+.container .button1:hover {
+  background-color: #555555;
+  color: white;
+}
+
+.container .canvas {
+  height: auto;
+  width: 100%;
+}
+/*# sourceMappingURL=style.css.map */
