@@ -1,0 +1,41 @@
+//Globals
+.vert-align-center {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// SASS
+.container {
+  .title {
+    font-size: 2rem;
+    margin-bottom: 0;
+    margin-top: 15px;
+  }
+  .menu {
+    height: auto;
+    width: 100%;
+  }
+  .button1 {
+    font-size: 0.8rem;
+    height: 60px;
+    width: 70px;
+    background-color: white;
+    color: black;
+    border: 1px solid rgb(116, 115, 115); /* 
+      Green */
+    border-radius: 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+  }
+  .button1:hover {
+    background-color: #555555;
+    color: white;
+  }
+
+  .canvas {
+    height: auto;
+    width: 100%;
+  }
+}
