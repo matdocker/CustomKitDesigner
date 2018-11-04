@@ -1,26 +1,26 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { SelectMenu } from "../actions/index";
+import { SelectKit } from "../actions/kit_select";
 import { bindActionCreators } from "redux";
 import WOW from "wow";
 
-class MainMenu extends Component {
+class SportsMenu extends Component {
   componentDidMount() {
     const wow = new WOW();
     wow.init();
   }
-  renderMenu() {
-    return this.props.mainMenus.map(menu => {
+  renderKit() {
+    return this.props.Sport.map(kit => {
+      console.log(`RenderKit Called: Sports: ${kit.type}`);
       return (
-        <div key={menu.mainMenu} className="col-md-1 m-1">
-          <button
-            onClick={() => this.props.SelectMenu(menu.mainMenu)}
-            className="button1 wow zoomIn"
+        <div key={kit.type} className="col-md-3">
+          <img
+            onClick={() => this.props.SelectKit(kit.type)}
+            className="w-100 m-1 wow zoomIn hover"
             data-wow-delay="0.25s"
-            type="button"
-          >
-            {menu.mainMenu}
-          </button>
+            src={`src/img/${this.props.menu}/${kit.type}.png`}
+          />
+          <p className="text-center wow zoomIn hover">{kit.type}</p>
         </div>
       );
     });
@@ -30,23 +30,23 @@ class MainMenu extends Component {
     return (
       <div className="row align-items-center h-100">
         <div id="menu" className="row justify-content-center">
-          <h1 className="text-center wow slideInDown">Select Your Sport</h1>
-          <div className="row">{this.renderMenu()}</div>
+          <h1 className="wow slideInDown">Select Your Clothing Type</h1>
+          <div className="row">{this.renderKit()}</div>
         </div>
       </div>
     );
   }
 }
+
 function mapStateToProps(state) {
-  // Whatever gets returned from her will show up as props from books list
   return {
-    mainMenus: state.mainMenus
+    menu: state.ActiveMenu,
+    Sport: state.Sport
   };
-}
-// Anything returned from this function will end up as props on mainMenu Container
+} // Anything returned from this function will end up as props on mainMenu Container
 function mapDispatchToProps(dispatch) {
   // Whenever selectMenu is called the result should be passed to all of our reducers, dispatch pass selectMenu to all reducers
-  return bindActionCreators({ SelectMenu: SelectMenu }, dispatch);
+  return bindActionCreators({ SelectKit: SelectKit }, dispatch);
 }
 // Promote mainMenu list container froma a component to
 // a container - it needs to know about this new dispatch
@@ -54,4 +54,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(MainMenu);
+)(SportsMenu);

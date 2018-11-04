@@ -1,6 +1,7 @@
 export function SelectMenu(menu) {
+  console.log(`SelectMenu Called: ${menu}`);
   // SelectMenu is an AntionCreator it needs to return an
-  // anction, an object with a type property
+  // action, an object with a type property
   return {
     type: "MENU_SELECTED",
     payload: menu

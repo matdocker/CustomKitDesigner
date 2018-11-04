@@ -3,10 +3,13 @@ import { connect } from "react-redux";
 
 class KitBuilder extends Component {
   render() {
+    if (!this.props.menu) {
+      return <div>Select a book to get started.</div>;
+    }
     return (
       <div>
         <h1>Details of Kit Builder</h1>
-        <div>{console.log(this.props.menu.mainMenu)}</div>
+        <div>{this.props.menu}</div>
       </div>
     );
   }
@@ -14,7 +17,7 @@ class KitBuilder extends Component {
 
 function mapStateToProps(state) {
   return {
-    menu: state.activeMenu
+    menu: state.ActiveMenu
   };
 }
 

@@ -5,9 +5,21 @@
   align-items: center;
   justify-content: center;
 }
+body {
+  font-family: "Cutive Mono", monospace;
+
+  img.hover:hover {
+    transform: scale(1.1);
+    -webkit-transition: all 1s ease-out;
+    -moz-transition: all 1s ease-out;
+    -o-transition: all 1s ease-out;
+    transition: all 1s ease-out;
+  }
+}
 
 // SASS
 .container {
+  height: 100vh;
   .title {
     font-size: 2rem;
     margin-bottom: 0;
@@ -18,9 +30,9 @@
     width: 100%;
   }
   .button1 {
-    font-size: 0.8rem;
-    height: 60px;
-    width: 70px;
+    font-size: 1rem;
+    height: 100px;
+    width: 100px;
     background-color: white;
     color: black;
     border: 1px solid rgb(116, 115, 115); /* 
@@ -38,4 +50,10 @@
     height: auto;
     width: 100%;
   }
+
+  // .sport-menu {
+  //   width: auto;
+  //   height: auto;
+  //   margin: auto;
+  // }
 }

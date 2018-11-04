@@ -11,6 +11,21 @@
           justify-content: center;
 }
 
+body {
+  font-family: "Cutive Mono", monospace;
+}
+
+body img.hover:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+}
+
+.container {
+  height: 100vh;
+}
+
 .container .title {
   font-size: 2rem;
   margin-bottom: 0;
@@ -23,9 +38,9 @@
 }
 
 .container .button1 {
-  font-size: 0.8rem;
-  height: 60px;
-  width: 70px;
+  font-size: 1rem;
+  height: 100px;
+  width: 100px;
   background-color: white;
   color: black;
   border: 1px solid #747373;
