@@ -5,7 +5,8 @@ import allReducers from "./reducers";
 import _ from "lodash";
 import ReactDom from "react-dom";
 import Menu from "./containers/main_menu";
-import App from "./components/app";
+//import App from "./components/app";
+import App from "./containers/app";
 
 const store = createStore(allReducers);
 
@@ -19,7 +20,7 @@ class Index extends Component {
 // on the page (In the DOM)
 ReactDom.render(
   <Provider store={store}>
-    <App activeMenu="mainMenu" />
+    <App />
   </Provider>,
   document.querySelector(".container")
 );
