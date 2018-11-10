@@ -36,13 +36,6 @@ class Menu extends Component {
     });
   };
 
-  fileUploadHandler = () => {
-    return Axios.get(
-      "http://localhost:8080/KitDesigner/src/components/img",
-      fileSelectHandler.event.target.files[0].name
-    );
-  };
-
   render() {
     const menuState = this.state.menu;
     const sport = this.props.sport;

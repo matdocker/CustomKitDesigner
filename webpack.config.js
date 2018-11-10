@@ -1,61 +1,69 @@
 module.exports = {
-  entry: ['./src/index.js'],
+  entry: ["./src/index.js"],
   output: {
     path: __dirname,
-    publicPath: '/',
-    filename: 'bundle.js',
+    publicPath: "/",
+    filename: "bundle.js"
   },
   module: {
     loaders: [
       {
         test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,
-        loader: 'babel-loader',
+        loader: "babel-loader",
         query: {
-          presets: ['react', 'es2015', 'stage-0'],
-          plugins: ['react-html-attrs', 'transform-class-properties', 'transform-decorators-legacy'],
-        },
+          presets: ["react", "es2015", "stage-0"],
+          plugins: [
+            "react-html-attrs",
+            "transform-class-properties",
+            "transform-decorators-legacy"
+          ]
+        }
       },
       {
         exclude: /node_modules/,
-        loader: 'babel',
+        loader: "babel",
         query: {
-          presets: ['react', 'es2015', 'stage-1'],
-        },
+          presets: ["react", "es2015", "stage-1"]
+        }
       },
       {
-        test: /ignore\.(png|jpg|gif|svg)$/, loader: 'ignore-loader',
+        test: /ignore\.(png|jpg|gif|svg)$/,
+        loader: "ignore-loader"
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
-        loader: 'file-loader',
+        loader: "file-loader",
         options: {
-          name: '[name].[ext]?[hash]',
-        },
-      },
+          name: "[name].[ext]?[hash]"
+        }
+      }
     ],
     rules: [
       {
         test: /\.(png|jpe?g|svg)$/i,
-        use: [{
-          loader: 'file-loader',
-          options: {
-            limit: 8000, // Convert images < 8kb to base64 strings
-            name: 'img/[name].[ext]',
-          },
-        }],
-      },
-    ],
+        use: [
+          "file-loader",
+          {
+            loader: "image-webpack-loader",
+            options: {
+              bypassOnDebug: true, // webpack@1.x
+              disable: true // webpack@2.x and newer
+            }
+          }
+        ]
+      }
+    ]
   },
   resolve: {
-    extensions: ['', '.js', '.jsx'],
+    extensions: ["", ".js", ".jsx"]
   },
   devServer: {
     historyApiFallback: true,
-    contentBase: './',
+    contentBase: "./",
     watchOptions: {
       aggregateTimeout: 300,
-      poll: 1000,
-    },
-  },
+      poll: 1000
+    }
+  }
 };

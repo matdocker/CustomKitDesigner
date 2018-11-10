@@ -9,8 +9,6 @@ export default () => {
     { mainMenu: "Football" },
     { mainMenu: "Baseball" },
     { mainMenu: "Hockey" },
-    { mainMenu: "Touch Football" },
-    { mainMenu: "Gym" },
-    { mainMenu: "Other" }
+    { mainMenu: "Touch Football" }
   ];
 };

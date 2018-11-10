@@ -11,6 +11,22 @@
           justify-content: center;
 }
 
+body {
+  font-family: "Cutive Mono", monospace;
+}
+
+body div.hover:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+}
+
+.container {
+  height: 100vh;
+}
+
 .container .title {
   font-size: 2rem;
   margin-bottom: 0;
@@ -23,9 +39,9 @@
 }
 
 .container .button1 {
-  font-size: 0.8rem;
-  height: 60px;
-  width: 70px;
+  font-size: 1rem;
+  height: 100px;
+  width: 100px;
   background-color: white;
   color: black;
   border: 1px solid #747373;
@@ -43,7 +59,27 @@
 }
 
 .container .canvas {
-  height: auto;
-  width: 100%;
+  width: auto;
+}
+
+@media (max-width: 400px) {
+  .container .canvas {
+    height: 350px;
+  }
+}
+
+@media (max-width: 401px) {
+  .container .canvas {
+    height: 420px;
+  }
+}
+
+.container a.button {
+  color: black;
+  background: transparent;
+  border: none;
+  padding: 1px;
+  cursor: pointer;
+  text-decoration: none;
 }
 /*# sourceMappingURL=style.css.map */

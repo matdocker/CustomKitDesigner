@@ -2,15 +2,21 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { SelectMenu } from "../actions/index";
 import { bindActionCreators } from "redux";
+import WOW from "wow";
 
 class MainMenu extends Component {
+  componentDidMount() {
+    const wow = new WOW();
+    wow.init();
+  }
   renderMenu() {
     return this.props.mainMenus.map(menu => {
       return (
-        <div key={menu.mainMenu} className="d-inline">
+        <div key={menu.mainMenu} className="col-xs-1 m-1">
           <button
-            onClick={() => this.props.SelectMenu(menu)}
-            className="button1 m-1"
+            onClick={() => this.props.SelectMenu(menu.mainMenu)}
+            className="button1 wow zoomIn"
+            data-wow-delay="0.25s"
             type="button"
           >
             {menu.mainMenu}
@@ -22,12 +28,10 @@ class MainMenu extends Component {
 
   render() {
     return (
-      <div className="vert-align-center">
-        <div className="container">
-          <h1 className="text-center">Select Your Sport</h1>
-          <div id="menu" className="row justify-content-center">
-            {this.renderMenu()}
-          </div>
+      <div className="d-flex align-items-center h-100">
+        <div id="menu" className="justify-content-center">
+          <h1 className="text-center wow slideInDown">Select Your Sport</h1>
+          <div className="row justify-content-center">{this.renderMenu()}</div>
         </div>
       </div>
     );
