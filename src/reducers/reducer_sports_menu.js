@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 export default () => {
   return [
     {
@@ -27,13 +26,3 @@ export default () => {
     }
   ];
 };
-=======
-export default () => {
-  return [
-    { type: "Polo" },
-    { type: "T-Shirt" },
-    { type: "Pants" },
-    { type: "Shorts" }
-  ];
-};
->>>>>>> f6179564ebf740428ec352f839758aeff8d243ea
